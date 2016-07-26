@@ -7,7 +7,7 @@
     return this;
   };
 
-  $.fn.dropdown = function (options) {
+  $.fn.dropdown = function (_options) {
     var defaults = {
       inDuration: 300,
       outDuration: 225,
@@ -20,7 +20,7 @@
     };
 
     // Open dropdown.
-    if (options === "open") {
+    if (_options === "open") {
       this.each(function() {
         $(this).trigger('open');
       });
@@ -28,7 +28,7 @@
     }
 
     // Close dropdown.
-    if (options === "close") {
+    if (_options === "close") {
       this.each(function() {
         $(this).trigger('close');
       });
@@ -37,7 +37,7 @@
 
     this.each(function(){
       var origin = $(this);
-      var options = $.extend({}, defaults, options);
+      var options = $.extend({}, defaults, _options);
       var isFocused = false;
 
       // Dropdown menu
